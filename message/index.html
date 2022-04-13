@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    h4, p {
+      margin: 0;
+      padding: 0;
+    }
+    h4 {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 13px;
+      line-height: 1.5em;
+    }
+    #box {
+      width: 500px;
+      height: 1800px;
+      background-color: blueviolet;
+      margin: 0 auto;
+    }
+    .push{
+      width: 320px;
+      box-shadow: 0 0 7px #ddd;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      position: fixed;
+      right: -330px;
+      /* right: 30px; */
+      bottom: 100px;
+      text-align: justify;
+    }
+    .close{
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    </style>
+    <div>
+      <div id="box"></div>
+      <div class="push" id="push">
+          <span class="material-icons-outlined close" onclick="closeBtn()">close</span>
+          <h4>영상공방</h4>
+          <p>이제 충분히 살펴보셨나요?👀✨<br><strong>궁금한 점</strong>이 있다면 언제든지 <strong>물어보세요!</strong></p>
+      </div>
+    </div>
+    
+    
+    <script>
+        const msg=document.getElementById("push");
+        console.log(document.documentElement.scrollHeight)
+        document.addEventListener("scroll", function () {
+          const currentScrollValue = document.documentElement.scrollTop; // 스크롤 위치 구하기
+          const pushMsg = document.getElementById("pushMsg");
+          console.log("현재 스크롤 위치는" + currentScrollValue + "입니다!"); // 스크롤 위치 콘솔에 출력하기
+
+          // 위치에 따른 이벤트 주기
+          if (currentScrollValue > document.documentElement.scrollHeight * 0.4) {
+            msg.style.transition = "all 1s ease-in-out";
+            msg.style.right="30px"
+          } 
+          else {
+            msg.style.right="-330px"
+          }
+        });
+        function closeBtn(){
+            msg.style.transition = "all 1s ease-in-out";
+            msg.style.right="-330px"
+        }
+    </script>
+</body>
+</html>
