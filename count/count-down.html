@@ -11,16 +11,18 @@
   <h2 id="count2"></h2>
   <script>
       let countBox1 = document.querySelector('#count1'),
-          count1 = 600;
+          count1 = 616;
 
       let counting1 = setInterval(function () {
           if (count1 == 77) {
               clearInterval(counting1);
               return false;
           }
-          count1 += -1;
-          countBox1.innerHTML = new Intl.NumberFormat().format(count1);
-      }, 1);
+          else if (count1 > 77){
+            count1 += -7;
+            countBox1.innerHTML = new Intl.NumberFormat().format(count1);
+          }
+      }, 10);
 
       let countBox2 = document.querySelector('#count2'),
           count2 = 60;
@@ -32,7 +34,7 @@
           }
           count2 += -1;
           countBox2.innerHTML = new Intl.NumberFormat().format(count2);
-      }, 40);
+      }, 15);
   </script>
 </body>
 </html>
