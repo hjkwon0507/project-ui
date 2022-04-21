@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2 id="counter1"></h2>
+  <h2 id="counter2"></h2>
+  <h2 id="counter3"></h2>
+  <script>
+    // 450 카운트업
+      let countBox1 = document.querySelector('#counter1'),
+          count1 = 0;
+
+      let counting1 = setInterval(function () {
+          if (count1 == 450) {
+              clearInterval(counting1);
+              return false;
+          }
+          count1 += 10;
+          countBox1.innerHTML = new Intl.NumberFormat().format(count1);
+      }, 10);
+
+      // 1200 카운트업
+      let countBox2 = document.querySelector('#counter2'),
+          count2 = 0;
+
+      let counting2 = setInterval(function () {
+          if (count2 == 1200) {
+              clearInterval(counting2);
+              return false;
+          }
+          count2 += 100;
+          countBox2.innerHTML = new Intl.NumberFormat().format(count2);
+      }, 40);
+
+      // 550 카운트업
+      let countBox3 = document.querySelector('#counter3'),
+          count3 = 0;
+
+      let counting3 = setInterval(function () {
+          if (count3 == 550) {
+              clearInterval(counting3);
+              return false;
+          }
+          count3 += 10;
+          countBox3.innerHTML = new Intl.NumberFormat().format(count3);
+      }, 10);
+  </script>
+</body>
+</html>

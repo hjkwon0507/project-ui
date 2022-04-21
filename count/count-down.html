@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2 id="count1"></h2>
+  <h2 id="count2"></h2>
+  <script>
+      let countBox1 = document.querySelector('#count1'),
+          count1 = 600;
+
+      let counting1 = setInterval(function () {
+          if (count1 == 77) {
+              clearInterval(counting1);
+              return false;
+          }
+          count1 += -1;
+          countBox1.innerHTML = new Intl.NumberFormat().format(count1);
+      }, 1);
+
+      let countBox2 = document.querySelector('#count2'),
+          count2 = 60;
+
+      let counting2 = setInterval(function () {
+          if (count2 == 7) {
+              clearInterval(counting2);
+              return false;
+          }
+          count2 += -1;
+          countBox2.innerHTML = new Intl.NumberFormat().format(count2);
+      }, 40);
+  </script>
+</body>
+</html>
