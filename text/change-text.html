@@ -15,18 +15,18 @@
   </style>
 </head>
 <body>
-  <p id="text">상세페이지, 홈페이지</p>
+  <p id="text">상세페이지, 홈페이지 영상</p>
 
   <script>
     let text = document.getElementById("text");
     // mouseover
     text.onmouseover = function(){
-      text.innerHTML = "더보러가기";
+      text.innerHTML = "더 보러가기";
       text.setAttribute('class', 'hover');
     }
     // mouseout
     text.onmouseout = function(){
-      text.innerHTML = "상세페이지, 홈페이지";
+      text.innerHTML = "상세페이지, 홈페이지 영상";
       text.removeAttribute('class', 'hover');
     }
   </script>
