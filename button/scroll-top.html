@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 50%;
+      height: 1000px;
+      margin: 0 auto;
+      background-color: blueviolet;
+    }
+    #topBtn {
+      position: fixed;
+      display: block;
+      width: 50px;
+      height: 30px;
+      bottom: 60px;
+      right: -50px;
+      transition: all .5s ease-out;
+    }
+    #topBtn.show {
+      right: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <button id="topBtn">TOP</button>
+
+  <script>
+    let topBtn = document.getElementById("topBtn");
+
+    window.addEventListener('scroll', function(){
+      console.log(this.scrollY)
+      if (this.scrollY > 200){
+        topBtn.classList.add('show');
+      } else {
+        topBtn.classList.remove('show');
+      }
+    });
+
+    window.addEventListener('click', function(e){
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
