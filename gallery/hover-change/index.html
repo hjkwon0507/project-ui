@@ -18,6 +18,10 @@
       justify-content: space-between;
     }
     .current {
+      background-image: url('../images/hover-change1.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
       border: 1px solid blue;
       width: 956px;
       height: 536px;
@@ -36,17 +40,34 @@
       height: 126px;
       border: 1px solid pink;
     }
+    li a img {
+      width: 100%;
+    }
   </style>
 </head>
 <body>
   <div class="gallery">
     <div class="current"></div>
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li class="item"><a href="#"><img src="../images/hover-change1.png" /></a></li>
+      <li class="item"><a href="#"><img src="../images/hover-change2.png" /></a></li>
+      <li class="item"><a href="#"><img src="../images/hover-change3.png" /></a></li>
+      <li class="item"><a href="#"><img src="../images/hover-change4.png" /></a></li>
     </ul>
   </div>
+
+  <script>
+    let current = document.getElementsByClassName("current");
+    const thumnail = document.querySelectorAll(".item > a");
+    console.log(thumnail)
+
+    for (let i=0; i < thumnail.length; i++){
+      thumnail[i].addEventListener('click', (e)=>{
+        e.preventDefault();
+        console.log()
+      })
+
+    }
+  </script>
 </body>
 </html>
