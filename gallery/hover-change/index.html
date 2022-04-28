@@ -12,22 +12,18 @@
       box-sizing: border-box;
     }
     .gallery {
-      border: 1px solid red;
       width: 1200px;
       display: flex;
       justify-content: space-between;
     }
-    .current {
-      background-image: url('../images/hover-change1.png');
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border: 1px solid blue;
+    .container {
       width: 956px;
       height: 536px;
     }
+    #current {
+      width: 100%;
+    }
     ul {
-      border: 1px solid green;
       width: 225px;
       height: 536px;
       display: flex;
@@ -38,7 +34,6 @@
       list-style: none;
       width: 225px;
       height: 126px;
-      border: 1px solid pink;
     }
     li a img {
       width: 100%;
@@ -47,7 +42,9 @@
 </head>
 <body>
   <div class="gallery">
-    <div class="current"></div>
+    <div class="container">
+      <img id="current" src="../images/hover-change1.png" />
+    </div>
     <ul>
       <li class="item"><a href="#"><img src="../images/hover-change1.png" /></a></li>
       <li class="item"><a href="#"><img src="../images/hover-change2.png" /></a></li>
@@ -57,14 +54,13 @@
   </div>
 
   <script>
-    let current = document.getElementsByClassName("current");
-    const thumnail = document.querySelectorAll(".item > a");
-    console.log(thumnail)
+    let current = document.getElementById("current");
+    const thumnail = document.querySelectorAll(".item > a > img");
 
     for (let i=0; i < thumnail.length; i++){
-      thumnail[i].addEventListener('click', (e)=>{
-        e.preventDefault();
-        console.log()
+      thumnail[i].addEventListener('click', function(){
+        // current.setAttribute("src", this.getAttribute("src"));
+        current.src = this.src;
       })
 
     }
