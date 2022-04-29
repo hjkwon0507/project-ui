@@ -63,6 +63,9 @@
         thumnail[i].style.border = "1px solid red";
         current.src = this.src;
       });
+      thumnail[i].addEventListener('mouseout', function(){
+        thumnail[i].style.border = "0px";
+      });
 
     }
   </script>
