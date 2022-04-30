@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div, ul, li {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .gallery {
+      width: 1200px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .container {
+      width: 956px;
+      height: 536px;
+    }
+    #current {
+      width: 100%;
+    }
+    ul {
+      width: 225px;
+      height: 536px;
+      display: flex;
+      align-content: space-between;
+      flex-wrap: wrap;
+    }
+    li {
+      list-style: none;
+      width: 225px;
+      height: 126px;
+    }
+    li a img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <div class="container">
+      <img id="current" src="../images/hover-change1.png" />
+    </div>
+    <ul>
+      <li class="item"><a href="#"><img src="../images/hover-change1.png" /></a></li>
+      <li class="item"><a href="#"><img src="../images/hover-change2.png" /></a></li>
+      <li class="item"><a href="#"><img src="../images/hover-change3.png" /></a></li>
+      <li class="item"><a href="#"><img src="../images/hover-change4.png" /></a></li>
+    </ul>
+  </div>
+
+  <script>
+    let current = document.getElementById("current");
+    const thumnail = document.querySelectorAll(".item > a > img");
+
+    for (let i=0; i < thumnail.length; i++){
+      thumnail[i].addEventListener('mouseover', function(){
+        // current.setAttribute("src", this.getAttribute("src"));
+        thumnail[i].style.border = "1px solid red";
+        current.src = this.src;
+      });
+
+    }
+  </script>
+</body>
+</html>
