@@ -37,6 +37,7 @@
     }
     li a img {
       width: 100%;
+      transition: all .5s;
     }
   </style>
 </head>
@@ -60,11 +61,11 @@
     for (let i=0; i < thumnail.length; i++){
       thumnail[i].addEventListener('mouseover', function(){
         // current.setAttribute("src", this.getAttribute("src"));
-        thumnail[i].style.border = "1px solid red";
+        thumnail[i].style.border = "3px solid orange";
         current.src = this.src;
       });
       thumnail[i].addEventListener('mouseout', function(){
-        thumnail[i].style.border = "0px";
+        thumnail[i].style.border = "none";
       });
 
     }
